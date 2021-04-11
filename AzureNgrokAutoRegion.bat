@@ -1,6 +1,5 @@
-echo Author: https://youtube.com/c/tinhocthuchanh
 @echo off
-title Azure-Auto-Region
+title VPS-Azure
 
 echo Download all files...
 curl --silent -O https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe 
