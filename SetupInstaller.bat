@@ -8,4 +8,4 @@ cd IDM
 FOR %%i IN ("Internet Download Manager*.exe") DO Set FileName="%%i"
 %FileName% /SILENT
 echo Installing 7-zip...
-"7z1900-x64.exe" /S
+7z1900-x64.exe /S
