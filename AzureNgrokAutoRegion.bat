@@ -34,4 +34,6 @@ if %RE%==IN (start ngrok tcp --region in 3389)
 
 
 echo Finished!
+echo Installing applications...
+SetupInstaller.bat
 NGROK-CHECK.bat
