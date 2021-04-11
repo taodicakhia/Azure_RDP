@@ -4,7 +4,7 @@ title VPS-Azure
 echo Download all files...
 curl --silent -O https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe 
 curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/NGROK-CHECK.bat
-
+curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/SetupInstaller.bat
 
 echo Copy NGROK to System32...
 copy ngrok.exe C:\Windows\System32 >nul
