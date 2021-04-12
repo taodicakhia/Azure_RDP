@@ -1,14 +1,12 @@
 @echo off
 echo Downloading all files...
-curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/IDM.zip
-echo Installing IDM...
-powershell -command "Expand-Archive -force IDM.zip"
-cd IDM
-FOR %%i IN ("Internet Download Manager*.exe") DO Set FileName="%%i"
-%FileName% /SILENT
-echo Installing 7-zip...
+curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/IDM.exe
 curl --silent -O https://www.7-zip.org/a/7z1900-x64.exe
+echo Installing IDM...
+IDM.exe /SILENT
+echo Installing 7-zip...
 7z1900-x64.exe /S
+echo Installing qBittorrent...
 
 del /f "C:\Users\Public\Desktop\Epic Games Launcher.lnk" > out.txt 2>&1
 net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
