@@ -8,7 +8,7 @@ IDM.exe /SILENT
 echo Installing 7-zip...
 7z1900-x64.exe /S
 echo Installing qBittorrent...
-
+qbittorrent.exe /S
 del /f "C:\Users\Public\Desktop\Epic Games Launcher.lnk" > out.txt 2>&1
 net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /V EnableAutoTray /T REG_DWORD /D 0 /F > out.txt 2>&1
