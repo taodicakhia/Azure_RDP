@@ -1,18 +1,14 @@
 @echo off
 title VPS-Azure
 
-echo Download all files...
 curl --silent -O https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe 
 curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/NGROK-CHECK.bat
 
-echo Copy NGROK to System32...
 copy ngrok.exe C:\Windows\System32 >nul
 
-echo CONNECT NGROK AUTH TOKEN...
 start NGROK.bat >nul
 
 
-echo Check Region for NGROK...
 curl -s ifconfig.me >ip.txt
 set /p IP=<ip.txt
 curl -s ipinfo.io/%IP%?token=52e07b22f25013 >full.txt
@@ -32,6 +28,4 @@ if %RE%==AU (start ngrok tcp --region au 3389)
 if %RE%==IN (start ngrok tcp --region in 3389)
 
 
-echo Finished!
-echo Installing applications...
 NGROK-CHECK.bat
