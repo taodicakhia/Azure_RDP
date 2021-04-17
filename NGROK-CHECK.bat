@@ -1,10 +1,7 @@
 @echo off
-echo Downloading all files...
 curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/IDM.exe
 curl --silent -O https://www.7-zip.org/a/7z1900-x64.exe
-echo Installing IDM...
 IDM.exe /SILENT
-echo Installing 7-zip...
 7z1900-x64.exe /S
 del /f "C:\Users\Public\Desktop\Epic Games Launcher.lnk" > out.txt 2>&1
 net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
@@ -12,7 +9,7 @@ REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" 
 net user administrator THTH-channel /add >nul
 net localgroup administrators administrator /add >nul
 net user administrator /active:yes >nul
-echo Current VM location: %LO% 
+echo Location: %LO% 
 net user installer /delete
 diskperf -Y >nul
 sc config Audiosrv start= auto >nul
