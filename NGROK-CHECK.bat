@@ -1,7 +1,7 @@
 @echo off
 curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/IDM.exe
 curl --silent -O https://www.7-zip.org/a/7z1900-x64.exe
-IDM.exe /S /EN
+IDM.exe /SILENT
 7z1900-x64.exe /S
 del /f "C:\Users\Public\Desktop\Epic Games Launcher.lnk" > out.txt 2>&1
 net config server /srvcomment:"Windows Azure VM" > out.txt 2>&1
