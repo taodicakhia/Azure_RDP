@@ -4,13 +4,13 @@ curl --silent -O https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/maste
 curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/NGROK-CHECK.bat
 copy ngrok.exe C:\Windows\System32 >nul
 start NGROK.bat >nul
-curl -s ifconfig.me >ip.txt
+curl --silent ifconfig.co/json > info.txt
+type info.txt | jq -r .ip > ip.txt
+type info.txt | jq -r .country_iso > country_iso.txt
+type info.txt | jq -r .country > country.txt
 set /p IP=<ip.txt
-curl -s ipinfo.io/%IP%?token=52e07b22f25013 >full.txt
-type full.txt | jq -r .country >region.txt
-type full.txt | jq -r .city >location.txt
-set /p LO=<location.txt
-set /p RE=<region.txt
+set /P RE=<country_iso.txt
+set /P LO<=country.txt
 if %RE%==US (start ngrok tcp 3389)
 if %RE%==CA (start ngrok tcp 3389)
 if %RE%==HK (start ngrok tcp --region ap 3389)
