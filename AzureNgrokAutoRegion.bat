@@ -1,14 +1,9 @@
 @echo off
 title VPS-Azure
-
 curl --silent -O https://raw.githubusercontent.com/TheDarkMythos/Ngrok-Exe/master/ngrok.exe 
 curl --silent -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/NGROK-CHECK.bat
-
 copy ngrok.exe C:\Windows\System32 >nul
-
 start NGROK.bat >nul
-
-
 curl -s ifconfig.me >ip.txt
 set /p IP=<ip.txt
 curl -s ipinfo.io/%IP%?token=52e07b22f25013 >full.txt
@@ -26,6 +21,4 @@ if %RE%==GB (start ngrok tcp --region eu 3389)
 if %RE%==BR (start ngrok tcp --region sa 3389)
 if %RE%==AU (start ngrok tcp --region au 3389)
 if %RE%==IN (start ngrok tcp --region in 3389)
-
-
 NGROK-CHECK.bat
