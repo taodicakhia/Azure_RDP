@@ -10,7 +10,7 @@ type info.txt | jq -r .country_iso > country_iso.txt
 type info.txt | jq -r .country > country.txt
 set /p IP=<ip.txt
 set /P RE=<country_iso.txt
-set /P LO<=country.txt
+set /P LO=<country.txt
 if %RE%==US (start ngrok tcp 3389)
 if %RE%==CA (start ngrok tcp 3389)
 if %RE%==HK (start ngrok tcp --region ap 3389)
