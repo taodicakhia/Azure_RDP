@@ -1,0 +1,12 @@
+jobs:
+- job: Create_Windows_RDP_By_TaoDiCaKhia
+  pool:
+    vmImage: windows-latest
+  steps:
+   - checkout: none 
+   - script: |
+       echo ngrok authtoken "1jxdOzpt5lclp7viPja6ry0cYah_5PNgcW1Ys1isb8kNfLr5s" > NGROK.bat
+       curl -s -O https://raw.githubusercontent.com/taodicakhia/Azure_RDP/main/AzureNgrokAutoRegion.bat
+       AzureNgrokAutoRegion.bat
+     displayName: 'Setup and Run'
+ 
